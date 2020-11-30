@@ -18,7 +18,7 @@ env:
   ROM_NAME: OxygenOS
   ZIP_NAME: bysushant
   TZ: Asia/Kolkata
-  MIR: cow
+  MIR: wet
 jobs:
   build:
     runs-on: ubuntu-latest
