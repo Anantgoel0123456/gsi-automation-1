@@ -14,9 +14,9 @@ on:
     types: [started]
     
 env:
-  ROM_URL: https://otafsg1.h2os.com/patch/amazone2/GLO/OnePlus5Oxygen/OnePlus5Oxygen_23.J.69_GLO_069_2010292138/OnePlus5Oxygen_23_OTA_069_all_2010292138_6700.zip
-  ROM_NAME: OxygenOS
-  ZIP_NAME: bysushant
+  ROM_URL: https://tdrive.elytra8.workers.dev/OneOS_HMNote7_21.1.27_V125-10.zip
+  ROM_NAME: MIUIDebloat
+  ZIP_NAME: OneOS_HMNote7_21.1.27_V125-10
   TZ: Asia/Kolkata
   MIR: wet
 jobs:
@@ -43,7 +43,7 @@ jobs:
 
        
        - name: Clone ErfanGSI Source Code
-         run: git clone --recurse-submodules https://github.com/erfanoabdi/ErfanGSIs
+         run: git clone --recurse-submodules https://github.com/yashlearnpython/ErfanGSIs
        
        - name: Setting up ErfanGSI requirements
          run: |
@@ -59,16 +59,16 @@ jobs:
               mkdir final
               sudo chmod -R 777 ErfanGSIs/output
               cd ErfanGSIs/output
-              zip -r $ZIP_NAME-GSI-Aonly.7z *-Aonly-*.img
+              zip -r $ZIP_NAME-YashGSI-Aonly.7z *-Aonly-*.img
               touch links.txt
               curl -sL https://git.io/file-transfer | sh
               echo "Aonly : " >> links.txt
-              ./transfer $MIR $ZIP_NAME-GSI-Aonly.7z  | grep Download >> links.txt       
+              ./transfer $MIR $ZIP_NAME-YashGSI-Aonly.7z  | grep Download >> links.txt       
        - name: Zip AB and upload 
          run: |
               cd ErfanGSIs/output
-              zip -r $ZIP_NAME-GSI-AB.7z *-AB-*.img
-              ./transfer $MIR $ZIP_NAME-GSI-AB.7z | grep Download >> links.txt   
+              zip -r $ZIP_NAME-YashGSI-AB.7z *-AB-*.img
+              ./transfer $MIR $ZIP_NAME-YashGSI-AB.7z | grep Download >> links.txt   
               
        - name: Print download links
          run: |
