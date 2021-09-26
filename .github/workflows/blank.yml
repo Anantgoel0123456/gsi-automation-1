@@ -1,16 +1,16 @@
 name: Building GSI..
 
 on: push
-  release:
-    types: [published]
-  push:
-    branches:
-      - master
-    paths:
-      - '.config'
-  schedule:
-    - cron: 0 8 * * 5
-  watch:
+   release:
+     types: [published]
+   push:
+     branches:
+       - master
+     paths:
+       - '.config'
+   schedule:
+     - cron: 0 8 * * 5
+  watch: 100
     types: [started]
     
 env:
